@@ -1,0 +1,34 @@
+﻿@model List<logincoresinup.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-dark">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpDepartment</th>
+        <th>EmpSalary</th>
+        <th>EmpTL</th>
+        <th>EmpFM</th>
+        <th>Delete</th>
+        <th>Update</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.EmpId</td>
+    <td>@item.EmpName</td>
+    <td>@item.EmpDepartment</td>
+    <td>@item.Empsalary</td>
+    <td>@item.TL</td>
+    <td>@item.FM</td>
+    <td><a asp-action="delete" asp-controller="Home" asp-route-id="@item.EmpId" class="btn btn-danger">Delete</a></td>
+    <td><a asp-action="edit" asp-controller="Home" asp-route-id="@item.EmpId" class="btn btn-info">Update</a></td>
+</tr>
+    }
+   
+</table>
+
+<a asp-controller="Home" asp-action="AddEmployee" class="btn btn-primary">AddData</a>

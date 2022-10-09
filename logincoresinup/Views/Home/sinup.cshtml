@@ -1,0 +1,33 @@
+﻿
+
+
+@model logincoresinup.Models.Emplogin
+
+@{
+    ViewData["Title"] = "sinup";
+    Layout = "~/Views/Shared/_Layout_login.cshtml";
+}
+
+<h1>sinup</h1>
+
+<form asp-action="sinup" asp-controller="Home" method="post">
+
+    <input type="hidden" asp-for="UserId" />
+    <div class="form-group">
+        <label>UserName</label>
+        <input asp-for="UserName" type="email" class="form-control" required />
+        @*<span  asp-validation-for="EmpName"></span>*@
+
+
+    </div>
+    <div class="form-group">
+        <label>UserPassword</label>
+        <input asp-for="UserPassword" type="text" class="form-control" required />
+        @*<span class="text-danger" asp-validation-for="EmpDepartment"></span>*@
+    </div>
+
+
+    <button type="submit" class="btn btn-info">Submit </button>
+    <button type="reset" class=" btn btn-success">Reset</button>
+    <a asp-action="login" asp-controller="Home" class="btn btn-danger">login</a>
+</form>
